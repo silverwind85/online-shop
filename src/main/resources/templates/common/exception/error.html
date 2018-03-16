@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/header :: head"></head>
+
+<body>
+
+<div th:replace="common/header :: menu"/>
+<!--==================================================================================================================-->
+<div th:replace="common/header :: menu-second"/>
+<main class="container-fluid">
+    <div class="row row-eq-height">
+        <div class="container-header grey center">
+            <div class="row ">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <img src="/img/logo/logo 3.png" class="img-fluid img-margin responsible-logo"/>
+                        </div>
+                        <div class="col-xs-10 col align-self-center">
+                            <h1 class="col align-self-center">Produkty od samej natury do twojego zdrowia</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-9 offset-3">
+                <h1>W aplikacji wystąpił błąd </h1>
+
+                <table border="0" id="productList">
+                    <thead>
+                    <tr>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr data-th-each="product : ${products}">
+                        <td>
+                            <div th:if="${product != null}">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <a th:href="@{/products/} +${product.id}"><img style="width: 100%"  th:src="${(product.imagePath != null)  ? 'http://localhost:8081/adminPortal/'+product.imagePath : 'http://localhost:8081/adminPortal/img/product/default.png'}" th:alt="${product.name}"/></a>
+                                    </div>
+                                    <div class="col-8">
+                                        <h3 th:text="${product.name}"></h3>
+                                        <span>Cena: </span>
+
+                                        <span
+                                                th:text="${#numbers.formatDecimal(product.price, 0 , 'COMMA', 2, 'POINT')}"></span><span style="font-size:x-large;color:#db3208;"> zł</span>
+                                        <div>
+                                            <span>Kategoria: </span>
+                                            <th:block th:each="category : ${product.categories}">
+                                                <th:block th:text="${category.name}">[category name]</th:block>
+                                                <span>, </span>
+                                            </th:block>
+                                        </div>
+
+                                        <div>Opis: <span th:text="${#strings.abbreviate(product.description, 500)}"></span></div>
+                                        <div>Waga: <span th:text="${product.shippingWeight}"></span></div>
+                                        <div style="padding-bottom: 20px">Qty: <span th:text="${product.quantity}"></span></div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+<div th:replace="common/header :: js-script"/>
+
+
+</body>
+</html>

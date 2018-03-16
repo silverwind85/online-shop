@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head th:fragment="head">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+
+    <title>Fixed top navbar example for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+  <!--  <link href="/css/bootstrap.min.css" rel="stylesheet"/>-->
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" />
+
+   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+    <!--<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <!--data table-->
+   <!-- <link th:href="@{/css/jquery.dataTables.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/dataTables.bootstrap4.min.css}" rel="stylesheet" />-->
+
+
+
+</head>
+<div th:fragment="menu">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Sklep Zdrowie Natury</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item " th:classappend="${classActiveIndex}">
+                    <a class="nav-link" th:href="@{/}">Strona Główna<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item" th:classappend="${classActiveProducts}">
+                    <a class="nav-link" th:href="@{/products}">Sklep</a>
+                </li>
+                <li class="nav-item dropdown" >
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">Produkty</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                        <li><a class="dropdown-item" href="#"></a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">Kontakt</a>
+                </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Szukaj" aria-label="Search"/>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</div>
+<div th:fragment="menu-second">
+    <nav class="navbar">
+        <div class="navbar-row">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-google" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+            <a class="nav-link" href="#"><span>0</span><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></a>
+            <a class="btn btn-outline-success btn-lg btn-xs" th:href="@{/myProfile}" sec:authorize="isAuthenticated()" >MOJE KONTO</a>
+           <a class="btn btn-outline-success btn-lg btn-xs"  sec:authorize="isAuthenticated()" th:href="@{/logout}">WYLOGUJ</a>
+            <a class="btn btn-outline-success btn-lg btn-ms" sec:authorize="isAnonymous()" th:href="@{/login} ">ZALOGUJ</a>
+        </div>
+    </nav>
+    <div class="divider"></div>
+</div>
+<div th:fragment="js-script">
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+   <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+            integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+            integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+            crossorigin="anonymous"></script>-->
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+   <!-- <script th:src="@{/js/jquery.dataTable.min.js}"></script>
+    <script th:src="@{/js/dataTable.bootstrap4.min.js}"></script>-->
+</div>
+</html>

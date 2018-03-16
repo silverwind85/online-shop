@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="common/header :: head"></head>
+
+<body>
+
+<div th:replace="common/header :: menu"/>
+<!--==================================================================================================================-->
+<div th:replace="common/header :: menu-second"/>
+<main class="container-fluid">
+    <div class="row row-eq-height">
+        <div class="container-header grey center">
+            <div class="row ">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <img src="/img/logo/logo 3.png" class="img-fluid img-margin responsible-logo"/>
+                        </div>
+                        <div class="col-xs-10 col align-self-center">
+                            <h1 class="col align-self-center">Produkty od samej natury do twojego zdrowia</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="text-center">MOJE KONTO</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist" id="">
+                    <li class="nav-item" role="presentation">
+                        <a th:classappend="${classActiveRegister}? 'active'" class="nav-link" href="#register"
+                           aria-controls="home" role="tab"
+                           data-toggle="tab">Rejestracja</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a th:classappend="${classActiveLogin}? 'active'" class="nav-link" href="#login"
+                           aria-controls="profile" role="tab" data-toggle="tab">Logowanie</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a th:classappend="${classActiveForgetPassword}? 'active'" class="nav-link"
+                           href="#remember-password" aria-controls="messages" role="tab"
+                           data-toggle="tab">Zapomniałem hasło</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div th:classappend="${classActiveRegister}? 'active'" role="tabpanel" class="tab-pane"
+                         id="register">
+                        <div class="panel-group">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="aler alert-danger" th:if="${emailUsername}">Użytkownik z taką nazwą
+                                        użytownika już istnieje
+                                    </div>
+                                    <div class="aler alert-danger" th:if="${emailExists}">Użytkownik z takim emaile już
+                                        istnieje
+                                    </div>
+                                    <div class="alert alert-info" th:if="${emailSent}">Email z potwierdzeniem został
+                                        wysłany na twój addres email
+                                    </div>
+                                    <form th:action="@{/register}" method="post">
+                                        <div class="form-grup">
+                                            <label for="newUsername">Nazwa użytkownika</label>
+                                            <input required="required" type="text" class="form-control" id="newUsername"
+                                                   name="username"/>
+                                        </div>
+                                        <div class="form-grup">
+                                            <label for="email">Email</label>
+                                            <input required="required" type="email" class="form-control" id="email"
+                                                   name="email"/>
+                                        </div>
+                                        <button type="submit" class="btn btn-success">Wyślij</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div th:classappend="${classActiveLogin}? 'active'" role="tabpanel" class="tab-pane" id="login">
+                        <div class="panel-group">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="alert alert-danger" th:if="${param.error != null}">Nie poprawne hasło lub nazwa użytkownika</div>
+                                    <form th:action="@{/login}" method="post">
+                                        <div class="form-grup">
+                                            <label for="username">Nazwa użytkownika</label>
+                                            <input required="required" type="text" class="form-control" id="username"
+                                                   name="username"/>
+                                        </div>
+                                        <div class="form-grup">
+                                            <label for="password">Hasło</label>
+                                            <input required="required" type="password" class="form-control"
+                                                   id="password"
+                                                   name="password"/>
+                                        </div>
+                                        <button type="submit" class="btn btn-success">Logowanie</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div th:classappend="${classActiveForgetPassword}? 'active'" role="tabpanel" class="tab-pane"
+                         id="remember-password">
+                        <div class="panel-group">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="alert alert-danger" th:if="${emailNotExists}">Nie ma takiego e-maila</div>
+                                    <div class="alert alert-info" th:if="${forgetPasswordEmailSent}">Email z nowym hasłem został wysłany</div>
+                                    <form th:action="@{/forgetPassword}" method="post">
+                                        <div class="form-grup">
+                                            <label for="rememberEmail">Email</label>
+                                            <input required="required" type="email" class="form-control"
+                                                   id="rememberEmail"
+                                                   name="email"/>
+                                        </div>
+                                        <button type="submit" class="btn btn-success">Wyślij</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                </div><!--test-->
+            </div>
+        </div>
+    </div>
+</main>
+
+<div th:replace="common/header :: js-script"/>
+</body>
+</html>

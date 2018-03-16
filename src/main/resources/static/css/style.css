@@ -1,0 +1,184 @@
+/* Show it is fixed to the top */
+body {
+
+    font-size: 16px;
+}
+.btn{
+    margin-top: 0.4em;
+}
+
+
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+/*=======================================Menu========================================================================*/
+.dropdown .dropdown-menu a.dropdown-item{
+    border: solid 1px black;
+}
+.dropdown-menu{
+    padding: 0;
+}
+.container-header{
+    margin-bottom: .2em;
+}
+.navbar-row{
+    display:  flex;
+    flex-grow: 1;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.navbar-row .btn-lg{
+    margin-left: .5em;
+    margin-right: .5em
+}
+.navbar-row .navbar-nav .nav-link{
+    padding-right: .5rem;
+    padding-left: .5rem;
+    color:#28a745;
+}
+.navbar-row .nav-link i{
+    color: #28a745;
+}
+.navbar-row .nav-link span{
+    color: #28a745;
+    font-size: 1.6em;
+}
+
+
+.navbar-green {
+    color:#28a745;
+}
+.divider{
+    margin-bottom: 5px;
+    border: solid 1px black;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+/*=======================================End Menu====================================================================*/
+/*=======================================Header======================================================================*/
+
+.img-margin{
+    padding: 0.5em;
+}
+.container-main{
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+.container-header {
+    height: 100%;
+}
+.container-img{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.jumbotron-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+
+/*=======================================End Header==================================================================*/
+/*=======================================Content=====================================================================*/
+.center{
+    margin: 0 auto;
+}
+.responsible-logo{
+    max-width: 100%;
+     height: auto;
+}
+{
+    height: 60%;
+    width: 100%;
+}
+.grey{
+    background-color: #eee;
+
+
+}
+.product-section .w-100 {
+    margin-bottom: 10px;
+}
+.panel-sub{
+    margin-top: .2em;
+    margin-bottom: .2em;
+    background-color: #3cb878;
+}
+.form-wraper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.center-h{
+    margin: 1em;
+    text-align: center;
+}
+.title-product{
+    text-align: center;
+    margin-bottom: 1em;
+    text-transform: uppercase ;
+}
+
+/*
+Extra small devices (portrait phones, less than 544px)
+No media query since this is the default in Bootstrap because it is "mobile first"
+*/
+
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {
+    h1 {font-size:1.5rem;} /*1rem = 16px*/
+    body{font-size: 16px;}
+    }
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+    h1 {font-size:2rem;} /*1rem = 16px*/
+    body{font-size: 18px;}
+    .mr-auto{
+        flex-direction: row;
+    }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    h1 {font-size:2.5rem;} /*1rem = 16px*/
+    body{font-size: 20px;}
+    .container-header{
+        margin-bottom: 0;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    h1 {font-size:3rem;} /*1rem = 16px*/
+}
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Custom media queries
+*/
+
+/* Set width to make card deck cards 100% width */
+@media (min-width: 950px) and (max-width:1100px) {
+
+}

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/header :: head"></head>
+
+<body>
+
+<div th:replace="common/header :: menu"/>
+<!--==================================================================================================================-->
+<div th:replace="common/header :: menu-second"/>
+<main class="container-fluid">
+    <div class="row row-eq-height">
+        <div class="container-header grey center">
+            <div class="row ">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <img src="/img/logo/logo 3.png" class="img-fluid img-margin responsible-logo"/>
+                        </div>
+                        <div class="col-xs-10 col align-self-center">
+                            <h1 class="col align-self-center">Produkty od samej natury do twojego zdrowia</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <form th:action="@{/shoppingCart/addItem}" method="post">
+            <input hidden="hidden" th:field="*{product.id}" />
+            <div class="row" style="margin-top: 120px;">
+                <div style="padding-bottom: 10px" class="col-12"><a th:href="@{/products}" type="submit" class="btn btn-success">Powrót</a></div>
+
+                <div class="col-3">
+
+                    <img style="width: 100%"  th:src="${(product.imagePath != null)  ? 'http://localhost:8081/adminPortal/'+product.imagePath : 'http://localhost:8081/adminPortal/img/product/default.png'}" th:alt="${product.name}"/>
+                </div>
+
+                <div class="col-9">
+                    <h3 th:text="${product.name}"></h3>
+                    <div class="row">
+                        <div class="col-5">
+
+                            <!--<p><strong>Category: </strong><span th:text="${product.categories}"></span></p>-->
+
+                            <p><strong>Waga: </strong><span th:text="${product.shippingWeight}"></span> dag</p>
+                        </div>
+
+                        <div class="col-7">
+                            <div class="panel panel-default" style="border-width: 5px; margin-top: 20px;">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h4>Cena <span th:text="${product.price}"></span><span style="color:#db3208;">zł</span></h4>
+                                           <!-- <p>List Price: <span style="text-decoration: line-through">$<span th:text="${product.price}"></span></span></p>-->
+                                          <!--  <p>You save: $<span th:text="${#numbers.formatDecimal((product.listPrice - product.price), 0, 'COMMA', 2, 'POINT' )}"></span></p>-->
+
+                                            <!-- ELSE -->
+                                            <div th:if="*{product.quantity&gt;0}">
+                                                <div>Ilość: <span th:text="${product.quantity}"></span></div>
+                                            </div>
+
+
+
+
+                                            <!--<input th:if="${product.quantity<0}" style="width: 30px" />-->
+                                            <!--<select name="qty">
+                                                <option th:each="qty : ${qtyList}" th:value="${qty}" th:text="${qty}">
+                                                </option>
+                                            </select>-->
+                                        </div>
+                                        <div class="col-6">
+                                           <!-- <h4 th:if="*{product.quantity&gt;10}" style="color: green">In Stock</h4>
+                                            <h4 th:if="*{product.quantity&lt;10 and product.quantity&gt;0}" style="color: green">Only <span th:text="${product.quantity}"> In Stock</span></h4>
+                                            <h4 th:if="*{product.quantity==0}" style="color:darkred;">Niedostępne</h4>-->
+                                            <button th:if="*{product.quantity&gt;0}" type="submit" class="btn btn-success" style="color:black;border:1px solid black; padding: 10px 40px 10px 40px;">Dodaj do koszyka</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr/>
+                    <p th:utext="${product.description}"></p>
+                </div>
+            </div>
+        </form>
+
+        </div>
+
+</main>
+
+<div th:replace="common/header :: js-script"/>
+</body>
+</html>

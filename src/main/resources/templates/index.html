@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/header :: head"></head>
+
+<body>
+
+<div th:replace="common/header :: menu"/>
+<!--==================================================================================================================-->
+<div th:replace="common/header :: menu-second"/>
+<main class="container-fluid">
+    <div class="row row-eq-height">
+        <div class="col-lg-8 ">
+            <div class="container-header">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <!--===============================Corousel==============================================================-->
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="/img/KOD KUPONU_ DFG112017.jpg" alt="First slide"/>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h3>...</h3>
+                                        <p>...</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="/img/KOD KUPONU_ DFG112017.jpg" alt="Second slide"/>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h3>...</h3>
+                                        <p>...</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="/img/KOD KUPONU_ DFG112017.jpg" alt="Third slide"/>
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h3></h3>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                               data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                               data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 ">
+            <div class="container-header grey">
+                <div class="row">
+
+                    <div class="col-sm-6 col-lg-12">
+                        <!--<div class="container-img">-->
+                        <img src="/img/logo/logo 3.png" class="img-fluid mx-auto d-block img-margin"/>
+                        <!-- </div>-->
+                    </div>
+                    <div class="col-sm-6 col-lg-12">
+                        <div class="jumbotron-header">
+                            <h2 class="center-h">Produkty od samej natury do twojego zdrowia</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel-sub">
+        <div class="row">
+            <div class="col-sm-6">
+                <h3 class="center-h">ZAPISZ SIĘ NA NEWSLETTER
+                    DOSTĘP DO CIEKAWYCH PROMOCJII</h3>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-wraper">
+                    <form class="form-inline">
+                        <label class="sr-only" for="inlineFormInput">Name</label>
+                        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput"
+                               placeholder="Jane Doe"/>
+
+                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon">@</div>
+                            <input type="text" class="form-control" id="inlineFormInputGroup"
+                                   placeholder="Username"/>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="product-section">
+        <h2 class="title-product">Nowości</h2>
+        <div class="container-main">
+            <div class="row">
+                <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-lg-3"><img class="d-block w-100"
+                                                           src="/img/KOD KUPONU_ DFG112017.jpg"
+                                                           alt="Second slide"/></div>
+                                <div class="col-lg-3"><img class="d-block w-100"
+                                                           src="/img/KOD KUPONU_ DFG112017.jpg"
+                                                           alt="Second slide"/></div>
+                                <div class="col-lg-3"><img class="d-block w-100"
+                                                           src="/img/KOD KUPONU_ DFG112017.jpg"
+                                                           alt="Second slide"/></div>
+                                <div class="col-lg-3"><img class="d-block w-100"
+                                                           src="/img/KOD KUPONU_ DFG112017.jpg"
+                                                           alt="Second slide"/></div>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-lg-3"><img class="d-block w-100"
+                                                           src="/img/KOD KUPONU_ DFG112017.jpg"
+                                                           alt="Second slide"/></div>
+                                <div class="col-lg-3"><img class="d-block w-100"
+                                                           src="/img/KOD KUPONU_ DFG112017.jpg"
+                                                           alt="Second slide"/></div>
+                                <div class="col-lg-3"><img class="d-block w-100"
+                                                           src="/img/KOD KUPONU_ DFG112017.jpg"
+                                                           alt="Second slide"/></div>
+                                <div class="col-lg-3"><img class="d-block w-100"
+                                                           src="/img/KOD KUPONU_ DFG112017.jpg"
+                                                           alt="Second slide"/></div>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-lg-3"><img class="d-block w-100"
+                                                           src="/img/KOD KUPONU_ DFG112017.jpg"
+                                                           alt="Second slide"/></div>
+                                <div class="col-lg-3"><img class="d-block w-100"
+                                                           src="/img/KOD KUPONU_ DFG112017.jpg"
+                                                           alt="Second slide"/></div>
+                                <div class="col-lg-3"><img class="d-block w-100"
+                                                           src="/img/KOD KUPONU_ DFG112017.jpg"
+                                                           alt="Second slide"/></div>
+                                <div class="col-lg-3"><img class="d-block w-100"
+                                                           src="/img/KOD KUPONU_ DFG112017.jpg"
+                                                           alt="Second slide"/></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button"
+                       data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button"
+                       data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+
+</main>
+
+<div th:replace="common/header :: js-script"/>
+</body>
+</html>
